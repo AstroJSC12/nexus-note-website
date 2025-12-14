@@ -6,15 +6,32 @@ export function Logo({ href = '/' }: { href?: string }) {
       <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-accent/15 ring-1 ring-accent/25">
         <svg
           viewBox="0 0 24 24"
-          width="18"
-          height="18"
+          width="20"
+          height="20"
           aria-hidden="true"
           className="text-accent"
         >
           <path
-            fill="currentColor"
-            d="M12 2.4c.2 0 .4.06.56.18l7 5a1 1 0 0 1 .44.82v6.42c0 .33-.16.64-.42.82l-7 5a1 1 0 0 1-1.16 0l-7-5a1 1 0 0 1-.42-.82V8.4a1 1 0 0 1 .44-.82l7-5c.16-.12.36-.18.56-.18Zm0 2.23L6 8.93v5.54l6 4.28 6-4.28V8.93l-6-4.3Zm0 3.14a1 1 0 0 1 1 1v1.2l2.2 1.26a1 1 0 1 1-1 1.73L13 11.86v2.54l2.2 1.26a1 1 0 1 1-1 1.73L13 16.26V17.5a1 1 0 1 1-2 0v-1.24l-1.2.69a1 1 0 1 1-1-1.73L11 14.4v-2.54l-1.2.69a1 1 0 1 1-1-1.73L11 9.98V8.77a1 1 0 0 1 1-1Z"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M12 3.5c-.4 0-.8.15-1.1.4L4.1 8.3c-.4.3-.6.7-.6 1.2v5c0 .5.2.9.6 1.2l6.8 4.4c.6.4 1.4.4 2 0l6.8-4.4c.4-.3.6-.7.6-1.2v-5c0-.5-.2-.9-.6-1.2l-6.8-4.4c-.3-.25-.7-.4-1.1-.4Z"
           />
+          <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+          <circle cx="12" cy="7" r="1" fill="currentColor" />
+          <circle cx="12" cy="17" r="1" fill="currentColor" />
+          <circle cx="7.5" cy="9.5" r="1" fill="currentColor" />
+          <circle cx="16.5" cy="9.5" r="1" fill="currentColor" />
+          <circle cx="7.5" cy="14.5" r="1" fill="currentColor" />
+          <circle cx="16.5" cy="14.5" r="1" fill="currentColor" />
+          <line x1="12" y1="10.5" x2="12" y2="8" stroke="currentColor" strokeWidth="1" />
+          <line x1="12" y1="13.5" x2="12" y2="16" stroke="currentColor" strokeWidth="1" />
+          <line x1="10.7" y1="11.3" x2="8.3" y2="10" stroke="currentColor" strokeWidth="1" />
+          <line x1="13.3" y1="11.3" x2="15.7" y2="10" stroke="currentColor" strokeWidth="1" />
+          <line x1="10.7" y1="12.7" x2="8.3" y2="14" stroke="currentColor" strokeWidth="1" />
+          <line x1="13.3" y1="12.7" x2="15.7" y2="14" stroke="currentColor" strokeWidth="1" />
         </svg>
       </span>
       <span className="text-sm font-semibold tracking-tight text-foreground">

@@ -48,78 +48,50 @@ export default function Home() {
       <main>
         <Section className="pt-14 sm:pt-24">
           <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
-            <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs text-muted-foreground">
-                <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
-                Mac-native. Local-first. Private by design.
-              </div>
-              <h1 className="mt-5 text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
-                A private intelligence layer over your digital life.
+            <div className="lg:col-span-6">
+              <h1 className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
+                Your private AI memory.
               </h1>
-              <p className="mt-4 max-w-2xl text-pretty text-lg leading-8 text-muted-foreground">
-                Nexus Note is a Mac-native system that turns everything worth remembering into
-                a unified, searchable memory—documents, meetings, tasks, calendars, email, and
-                the patterns you’d want to keep.
-              </p>
-              <p className="mt-3 max-w-2xl text-pretty text-lg leading-8 text-muted-foreground">
-                It indexes locally, reasons locally, and only acts with explicit boundaries.
+              <p className="mt-5 max-w-lg text-pretty text-lg leading-8 text-muted-foreground">
+                A Mac-native system that turns your documents, meetings, and notes into a searchable, local intelligence layer.
               </p>
 
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <ButtonLink href="#waitlist">Request access</ButtonLink>
                 <ButtonLink href="#how" variant="secondary">
                   How it works
                 </ButtonLink>
               </div>
-
-              <div className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
-                <span className="inline-flex items-center gap-2">
-                  <span className="h-1 w-1 rounded-full bg-accent/70" aria-hidden="true" />
-                  Local RAG on-device
-                </span>
-                <span className="inline-flex items-center gap-2">
-                  <span className="h-1 w-1 rounded-full bg-accent/70" aria-hidden="true" />
-                  No silent network activity
-                </span>
-                <span className="inline-flex items-center gap-2">
-                  <span className="h-1 w-1 rounded-full bg-accent/70" aria-hidden="true" />
-                  Portable, inspectable memory
-                </span>
-              </div>
             </div>
 
-            <div className="lg:col-span-5">
+            <div className="lg:col-span-6">
               <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-surface/60 p-6">
                 <div
                   className="pointer-events-none absolute -top-20 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-accent/25 blur-3xl"
                   aria-hidden="true"
                 />
                 <div className="relative">
-                  <div className="text-sm font-semibold">Nexus Node</div>
-                  <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                    The local system that ingests your sources, normalizes them into notes,
-                    builds an on-device index, and gives you reliable answers with traceable
-                    provenance.
-                  </p>
-
-                  <div className="mt-5 grid gap-3">
-                    <div className="rounded-2xl bg-background/60 p-4 ring-1 ring-border/70">
-                      <div className="text-xs text-muted-foreground">Example</div>
-                      <div className="mt-1 text-sm font-medium">
-                        “What did I decide about the hiring plan last month?”
-                      </div>
-                      <div className="mt-2 text-xs text-muted-foreground">
-                        Sources: meeting transcript, calendar, follow-up email
-                      </div>
+                  <div className="rounded-2xl bg-background/60 p-4 ring-1 ring-border/70">
+                    <div className="text-xs text-muted-foreground">You ask</div>
+                    <div className="mt-1 text-sm font-medium">
+                      "What did I decide about the hiring plan last month?"
                     </div>
-                    <div className="rounded-2xl bg-background/60 p-4 ring-1 ring-border/70">
-                      <div className="text-xs text-muted-foreground">Result</div>
-                      <div className="mt-1 text-sm font-medium">
-                        A concise answer with citations—and suggested next actions.
-                      </div>
-                      <div className="mt-2 text-xs text-muted-foreground">
-                        Action requires confirmation.
-                      </div>
+                  </div>
+                  <div className="mt-3 rounded-2xl bg-background/60 p-4 ring-1 ring-border/70">
+                    <div className="text-xs text-muted-foreground">Nexus Note answers</div>
+                    <div className="mt-1 text-sm font-medium">
+                      You decided to delay Q1 hiring by 6 weeks and revisit after the product launch.
+                    </div>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <span className="inline-flex items-center rounded-full bg-accent/10 px-2 py-0.5 text-xs text-accent">
+                        Mar 12 meeting
+                      </span>
+                      <span className="inline-flex items-center rounded-full bg-accent/10 px-2 py-0.5 text-xs text-accent">
+                        Calendar note
+                      </span>
+                      <span className="inline-flex items-center rounded-full bg-accent/10 px-2 py-0.5 text-xs text-accent">
+                        Follow-up email
+                      </span>
                     </div>
                   </div>
                 </div>
