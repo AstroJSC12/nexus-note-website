@@ -13,14 +13,30 @@ function Pillar({
   description: string;
 }) {
   return (
-    <Card className="p-5">
-      <div className="text-sm font-semibold tracking-tight text-foreground">
-        {title}
-      </div>
-      <p className="mt-2 text-sm leading-6 text-muted-foreground">
-        {description}
-      </p>
-    </Card>
+    <div className="py-4">
+      <div className="text-sm font-semibold tracking-tight text-foreground">{title}</div>
+      <p className="mt-2 max-w-xl text-sm leading-6 text-muted-foreground">{description}</p>
+    </div>
+  );
+}
+
+function Detail({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <details className="group rounded-2xl border border-border/70 bg-surface/50 px-5 py-4">
+      <summary className="cursor-pointer list-none select-none">
+        <div className="flex items-start justify-between gap-6">
+          <div className="text-sm font-semibold">{title}</div>
+          <div
+            className="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-background/60 ring-1 ring-border/70"
+            aria-hidden="true"
+          >
+            <span className="text-xs text-muted-foreground group-open:hidden">+</span>
+            <span className="text-xs text-muted-foreground hidden group-open:inline">–</span>
+          </div>
+        </div>
+      </summary>
+      <div className="pt-3 text-sm leading-6 text-muted-foreground">{children}</div>
+    </details>
   );
 }
 
@@ -30,7 +46,7 @@ export default function Home() {
       <Header />
 
       <main>
-        <Section className="pt-14 sm:pt-20">
+        <Section className="pt-14 sm:pt-24">
           <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-7">
               <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs text-muted-foreground">
@@ -45,7 +61,7 @@ export default function Home() {
                 a unified, searchable memory—documents, meetings, tasks, calendars, email, and
                 the patterns you’d want to keep.
               </p>
-              <p className="mt-4 max-w-2xl text-pretty text-lg leading-8 text-muted-foreground">
+              <p className="mt-3 max-w-2xl text-pretty text-lg leading-8 text-muted-foreground">
                 It indexes locally, reasons locally, and only acts with explicit boundaries.
               </p>
 
@@ -56,24 +72,24 @@ export default function Home() {
                 </ButtonLink>
               </div>
 
-              <div className="mt-8 grid gap-3 sm:grid-cols-3">
-                <div className="rounded-2xl border border-border bg-surface p-4">
-                  <div className="text-xs font-medium text-muted-foreground">Runs on-device</div>
-                  <div className="mt-1 text-sm font-semibold">Local RAG</div>
-                </div>
-                <div className="rounded-2xl border border-border bg-surface p-4">
-                  <div className="text-xs font-medium text-muted-foreground">No silent sync</div>
-                  <div className="mt-1 text-sm font-semibold">Explicit network</div>
-                </div>
-                <div className="rounded-2xl border border-border bg-surface p-4">
-                  <div className="text-xs font-medium text-muted-foreground">You own memory</div>
-                  <div className="mt-1 text-sm font-semibold">Portable data</div>
-                </div>
+              <div className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
+                <span className="inline-flex items-center gap-2">
+                  <span className="h-1 w-1 rounded-full bg-accent/70" aria-hidden="true" />
+                  Local RAG on-device
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <span className="h-1 w-1 rounded-full bg-accent/70" aria-hidden="true" />
+                  No silent network activity
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <span className="h-1 w-1 rounded-full bg-accent/70" aria-hidden="true" />
+                  Portable, inspectable memory
+                </span>
               </div>
             </div>
 
             <div className="lg:col-span-5">
-              <div className="relative overflow-hidden rounded-3xl border border-border bg-surface p-6 shadow-sm">
+              <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-surface/60 p-6">
                 <div
                   className="pointer-events-none absolute -top-20 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-accent/25 blur-3xl"
                   aria-hidden="true"
@@ -87,7 +103,7 @@ export default function Home() {
                   </p>
 
                   <div className="mt-5 grid gap-3">
-                    <div className="rounded-2xl border border-border bg-background p-4">
+                    <div className="rounded-2xl bg-background/60 p-4 ring-1 ring-border/70">
                       <div className="text-xs text-muted-foreground">Example</div>
                       <div className="mt-1 text-sm font-medium">
                         “What did I decide about the hiring plan last month?”
@@ -96,7 +112,7 @@ export default function Home() {
                         Sources: meeting transcript, calendar, follow-up email
                       </div>
                     </div>
-                    <div className="rounded-2xl border border-border bg-background p-4">
+                    <div className="rounded-2xl bg-background/60 p-4 ring-1 ring-border/70">
                       <div className="text-xs text-muted-foreground">Result</div>
                       <div className="mt-1 text-sm font-medium">
                         A concise answer with citations—and suggested next actions.
@@ -112,24 +128,30 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section className="py-10 sm:py-14">
-          <div className="grid gap-4 md:grid-cols-4" id="features">
-            <Pillar
-              title="Local-first"
-              description="Indexing, embeddings, and retrieval run on your Mac. Your knowledge stays yours."
-            />
-            <Pillar
-              title="Explicit boundaries"
-              description="Actions are deliberate. The system asks before it changes anything that matters."
-            />
-            <Pillar
-              title="Transparent sources"
-              description="Answers are grounded in your notes, with citations and traceable provenance."
-            />
-            <Pillar
-              title="You own your memory"
-              description="Your data is portable, inspectable, and under your control—not a black box."
-            />
+        <Section className="py-8 sm:py-10">
+          <div className="max-w-4xl" id="features">
+            <h2 className="text-xl font-semibold tracking-tight">Trust, by default</h2>
+            <p className="mt-3 text-sm leading-6 text-muted-foreground">
+              A local-first system should feel like infrastructure: predictable, inspectable, and calm.
+            </p>
+            <div className="mt-6 divide-y divide-border/70">
+              <Pillar
+                title="Local-first"
+                description="Indexing, embeddings, and retrieval run on your Mac. Your knowledge stays yours."
+              />
+              <Pillar
+                title="Explicit boundaries"
+                description="Actions are deliberate. The system asks before it changes anything that matters."
+              />
+              <Pillar
+                title="Transparent sources"
+                description="Answers are grounded in your notes, with citations and traceable provenance."
+              />
+              <Pillar
+                title="You own your memory"
+                description="Your data is portable, inspectable, and under your control—not a black box."
+              />
+            </div>
           </div>
         </Section>
 
@@ -145,41 +167,22 @@ export default function Home() {
               </p>
             </div>
             <div className="lg:col-span-7">
-              <div className="grid gap-4">
-                {[
-                  {
-                    title: 'Ingest',
-                    body: 'Bring in notes from the sources you already use: docs, calendars, tasks, mail, audio/video, and more.',
-                  },
-                  {
-                    title: 'Normalize',
-                    body: 'Everything is converted into a unified representation, so the system can reason across formats.',
-                  },
-                  {
-                    title: 'Index locally',
-                    body: 'Build a local semantic index (embeddings) and a fast text index on-device.',
-                  },
-                  {
-                    title: 'Retrieve + reason',
-                    body: 'A local model answers questions grounded in your notes (RAG), with citations and confidence cues.',
-                  },
-                  {
-                    title: 'Act (with consent)',
-                    body: 'Draft updates, plan sequences, create tasks, schedule meetings—always with explicit confirmation.',
-                  },
-                ].map((s) => (
-                  <Card key={s.title} className="p-6">
-                    <div className="flex items-start justify-between gap-6">
-                      <div>
-                        <div className="text-sm font-semibold">{s.title}</div>
-                        <p className="mt-2 text-sm leading-6 text-muted-foreground">{s.body}</p>
-                      </div>
-                      <div className="mt-0.5 hidden h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-accent/15 ring-1 ring-accent/25 sm:flex">
-                        <span className="text-xs font-semibold text-accent">●</span>
-                      </div>
-                    </div>
-                  </Card>
-                ))}
+              <div className="grid gap-3">
+                <Detail title="1. Ingest">
+                  Bring in notes from the sources you already use: docs, calendars, tasks, mail, audio/video, and more.
+                </Detail>
+                <Detail title="2. Normalize">
+                  Everything is converted into a unified representation, so the system can reason across formats.
+                </Detail>
+                <Detail title="3. Index locally">
+                  Build a local semantic index (embeddings) and a fast text index on-device.
+                </Detail>
+                <Detail title="4. Retrieve + reason">
+                  A local model answers questions grounded in your notes (RAG), with citations and confidence cues.
+                </Detail>
+                <Detail title="5. Act (with consent)">
+                  Draft updates, plan sequences, create tasks, schedule meetings—always with explicit confirmation.
+                </Detail>
               </div>
             </div>
           </div>
@@ -197,7 +200,7 @@ export default function Home() {
               </p>
             </div>
             <div className="lg:col-span-7">
-              <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid gap-3 sm:grid-cols-2">
                 {[
                   {
                     title: 'Decision memory',
@@ -216,7 +219,7 @@ export default function Home() {
                     body: 'Plan weeks, triage tasks, and keep commitments aligned across calendars, email, and docs.',
                   },
                 ].map((u) => (
-                  <Card key={u.title} className="p-6">
+                  <Card key={u.title} className="p-5">
                     <div className="text-sm font-semibold">{u.title}</div>
                     <p className="mt-2 text-sm leading-6 text-muted-foreground">{u.body}</p>
                   </Card>
@@ -227,28 +230,24 @@ export default function Home() {
         </Section>
 
         <Section>
-          <Card className="p-8">
-            <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
-              <div className="lg:col-span-7">
-                <h2 className="text-xl font-semibold tracking-tight">Not a note-taking app.</h2>
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                  Nexus Note isn’t a new place to write. It’s a local system that sits above what
-                  you already use—connecting documents, time, tasks, and media into a calm,
-                  trustworthy intelligence hub.
-                </p>
-              </div>
-              <div className="lg:col-span-5">
-                <div className="rounded-2xl border border-border bg-background p-5">
-                  <div className="text-xs font-medium text-muted-foreground">Design principle</div>
-                  <div className="mt-2 text-sm font-semibold">Quiet power, explicit control.</div>
-                  <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                    No hype loops. No black-box automation. Just grounded retrieval and
-                    deliberate actions.
-                  </p>
-                </div>
-              </div>
+          <div className="grid gap-8 lg:grid-cols-12 lg:items-start">
+            <div className="lg:col-span-6">
+              <h2 className="text-xl font-semibold tracking-tight">Not a note-taking app.</h2>
+              <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                Nexus Note isn’t a new place to write. It’s a local system that sits above what you already
+                use—connecting documents, time, tasks, and media into a calm, trustworthy intelligence hub.
+              </p>
             </div>
-          </Card>
+            <div className="lg:col-span-6">
+              <Card className="p-6">
+                <div className="text-xs font-medium text-muted-foreground">Design principle</div>
+                <div className="mt-2 text-sm font-semibold">Quiet power, explicit control.</div>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                  No hype loops. No black-box automation. Just grounded retrieval and deliberate actions.
+                </p>
+              </Card>
+            </div>
+          </div>
         </Section>
 
         <Section id="waitlist">

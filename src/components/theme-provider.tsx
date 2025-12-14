@@ -1,15 +1,14 @@
 'use client';
 
 import * as React from 'react';
-import { ThemeProvider as NextThemesProvider } from 'next-themes';
+import {
+  ThemeProvider as NextThemesProvider,
+  type ThemeProviderProps,
+  type Attribute,
+} from 'next-themes';
 
-type ThemeProviderProps = {
-  children: React.ReactNode;
-  defaultTheme?: string;
-  storageKey?: string;
-  attribute?: string;
-  enableSystem?: boolean;
-  disableTransitionOnChange?: boolean;
+type Props = Omit<ThemeProviderProps, 'attribute'> & {
+  attribute?: Attribute;
 };
 
 export function ThemeProvider({
@@ -20,10 +19,10 @@ export function ThemeProvider({
   enableSystem = true,
   disableTransitionOnChange = true,
   ...props
-}: ThemeProviderProps) {
+}: Props) {
   return (
     <NextThemesProvider
-      attribute={attribute as any}
+      attribute={attribute}
       defaultTheme={defaultTheme}
       enableSystem={enableSystem}
       disableTransitionOnChange={disableTransitionOnChange}
