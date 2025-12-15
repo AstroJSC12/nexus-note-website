@@ -1,44 +1,7 @@
 import { Header } from '@/components/site/header';
 import { Footer } from '@/components/site/footer';
-import { Section } from '@/components/site/section';
-import { Card } from '@/components/site/card';
 import { ButtonLink } from '@/components/site/button';
 import { WaitlistForm } from '@/components/site/waitlist-form';
-
-function Pillar({
-  title,
-  description,
-}: {
-  title: string;
-  description: string;
-}) {
-  return (
-    <div className="py-4">
-      <div className="text-sm font-semibold tracking-tight text-foreground">{title}</div>
-      <p className="mt-2 max-w-xl text-sm leading-6 text-muted-foreground">{description}</p>
-    </div>
-  );
-}
-
-function Detail({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <details className="group rounded-2xl border border-border/70 bg-surface/50 px-5 py-4">
-      <summary className="cursor-pointer list-none select-none">
-        <div className="flex items-start justify-between gap-6">
-          <div className="text-sm font-semibold">{title}</div>
-          <div
-            className="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-background/60 ring-1 ring-border/70"
-            aria-hidden="true"
-          >
-            <span className="text-xs text-muted-foreground group-open:hidden">+</span>
-            <span className="text-xs text-muted-foreground hidden group-open:inline">–</span>
-          </div>
-        </div>
-      </summary>
-      <div className="pt-3 text-sm leading-6 text-muted-foreground">{children}</div>
-    </details>
-  );
-}
 
 export default function Home() {
   return (
@@ -46,198 +9,192 @@ export default function Home() {
       <Header />
 
       <main>
-        <Section className="pt-14 sm:pt-24">
-          <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
-            <div className="lg:col-span-6">
-              <h1 className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
-                Your private AI memory.
-              </h1>
-              <p className="mt-5 max-w-lg text-pretty text-lg leading-8 text-muted-foreground">
-                A Mac-native system that turns your documents, meetings, and notes into a searchable, local intelligence layer.
-              </p>
-
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <ButtonLink href="#waitlist">Request access</ButtonLink>
-                <ButtonLink href="#how" variant="secondary">
-                  How it works
-                </ButtonLink>
-              </div>
+        {/* Hero */}
+        <section className="px-6 pt-20 pb-16 sm:pt-32 sm:pb-24">
+          <div className="mx-auto max-w-3xl text-center">
+            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
+              A private intelligence layer over your digital life.
+            </h1>
+            <p className="mt-6 text-base leading-7 text-muted-foreground max-w-2xl mx-auto">
+              Nexus Note is a Mac-native system that turns everything worth remembering into a unified, searchable memory—documents, tasks, calendars, email, meetings, and the patterns you'd want to keep. It indexes locally, reasons locally, and only acts with explicit boundaries.
+            </p>
+            <div className="mt-10 flex justify-center gap-4">
+              <ButtonLink href="#waitlist">Request early access</ButtonLink>
             </div>
+          </div>
+        </section>
 
-            <div className="lg:col-span-6">
-              <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-surface/60 p-6">
-                <div
-                  className="pointer-events-none absolute -top-20 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-accent/25 blur-3xl"
-                  aria-hidden="true"
-                />
-                <div className="relative">
-                  <div className="rounded-2xl bg-background/60 p-4 ring-1 ring-border/70">
-                    <div className="text-xs text-muted-foreground">You ask</div>
-                    <div className="mt-1 text-sm font-medium">
-                      "What did I decide about the hiring plan last month?"
-                    </div>
-                  </div>
-                  <div className="mt-3 rounded-2xl bg-background/60 p-4 ring-1 ring-border/70">
-                    <div className="text-xs text-muted-foreground">Nexus Note answers</div>
-                    <div className="mt-1 text-sm font-medium">
-                      You decided to delay Q1 hiring by 6 weeks and revisit after the product launch.
-                    </div>
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      <span className="inline-flex items-center rounded-full bg-accent/10 px-2 py-0.5 text-xs text-accent">
-                        Mar 12 meeting
-                      </span>
-                      <span className="inline-flex items-center rounded-full bg-accent/10 px-2 py-0.5 text-xs text-accent">
-                        Calendar note
-                      </span>
-                      <span className="inline-flex items-center rounded-full bg-accent/10 px-2 py-0.5 text-xs text-accent">
-                        Follow-up email
-                      </span>
-                    </div>
-                  </div>
+        {/* Example interaction */}
+        <section className="px-6 pb-20 sm:pb-28">
+          <div className="mx-auto max-w-xl">
+            <div className="rounded-2xl border border-border/50 bg-surface/30 p-6">
+              <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">You ask</div>
+              <p className="mt-2 font-medium">
+                "What did I decide about the hiring plan last month?"
+              </p>
+              <div className="mt-6 text-xs font-medium text-muted-foreground uppercase tracking-wide">Nexus Note answers</div>
+              <p className="mt-2 text-muted-foreground leading-7">
+                You decided to delay Q1 hiring by 6 weeks and revisit after the product launch.
+              </p>
+              <div className="mt-4">
+                <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Sources</div>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  <span className="inline-flex items-center rounded-full bg-accent/10 px-3 py-1 text-sm text-accent">
+                    Mar 12 meeting
+                  </span>
+                  <span className="inline-flex items-center rounded-full bg-accent/10 px-3 py-1 text-sm text-accent">
+                    Calendar note
+                  </span>
+                  <span className="inline-flex items-center rounded-full bg-accent/10 px-3 py-1 text-sm text-accent">
+                    Follow-up email
+                  </span>
                 </div>
               </div>
             </div>
           </div>
-        </Section>
+        </section>
 
-        <Section className="py-8 sm:py-10">
-          <div className="max-w-4xl" id="features">
-            <h2 className="text-xl font-semibold tracking-tight">Trust, by default</h2>
-            <p className="mt-3 text-sm leading-6 text-muted-foreground">
-              A local-first system should feel like infrastructure: predictable, inspectable, and calm.
-            </p>
-            <div className="mt-6 divide-y divide-border/70">
-              <Pillar
-                title="Local-first"
-                description="Indexing, embeddings, and retrieval run on your Mac. Your knowledge stays yours."
-              />
-              <Pillar
-                title="Explicit boundaries"
-                description="Actions are deliberate. The system asks before it changes anything that matters."
-              />
-              <Pillar
-                title="Transparent sources"
-                description="Answers are grounded in your notes, with citations and traceable provenance."
-              />
-              <Pillar
-                title="You own your memory"
-                description="Your data is portable, inspectable, and under your control—not a black box."
-              />
-            </div>
-          </div>
-        </Section>
-
-        <Section id="how">
-          <div className="grid gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-5">
-              <h2 className="text-2xl font-semibold tracking-tight">
-                How it works
-              </h2>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                Nexus Note treats a “note” as an atomic unit of meaning—documents, events, tasks,
-                messages, transcripts, preferences, and inferred signals.
-              </p>
-            </div>
-            <div className="lg:col-span-7">
-              <div className="grid gap-3">
-                <Detail title="1. Ingest">
-                  Bring in notes from the sources you already use: docs, calendars, tasks, mail, audio/video, and more.
-                </Detail>
-                <Detail title="2. Normalize">
-                  Everything is converted into a unified representation, so the system can reason across formats.
-                </Detail>
-                <Detail title="3. Index locally">
-                  Build a local semantic index (embeddings) and a fast text index on-device.
-                </Detail>
-                <Detail title="4. Retrieve + reason">
-                  A local model answers questions grounded in your notes (RAG), with citations and confidence cues.
-                </Detail>
-                <Detail title="5. Act (with consent)">
-                  Draft updates, plan sequences, create tasks, schedule meetings—always with explicit confirmation.
-                </Detail>
-              </div>
-            </div>
-          </div>
-        </Section>
-
-        <Section id="use-cases">
-          <div className="grid gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-5">
-              <h2 className="text-2xl font-semibold tracking-tight">
-                Built for technical professionals
-              </h2>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                For founders, CTOs, researchers, and power users who value trust, control, and
-                time over tinkering.
-              </p>
-            </div>
-            <div className="lg:col-span-7">
-              <div className="grid gap-3 sm:grid-cols-2">
-                {[
-                  {
-                    title: 'Decision memory',
-                    body: 'Recover past decisions with context: who agreed, what changed, and what to do next.',
-                  },
-                  {
-                    title: 'Meeting synthesis',
-                    body: 'Turn transcripts into durable notes: summaries, action items, and follow-ups linked to projects.',
-                  },
-                  {
-                    title: 'Personal research layer',
-                    body: 'Search across PDFs, notes, and links. Ask precise questions and get grounded answers.',
-                  },
-                  {
-                    title: 'Operational clarity',
-                    body: 'Plan weeks, triage tasks, and keep commitments aligned across calendars, email, and docs.',
-                  },
-                ].map((u) => (
-                  <Card key={u.title} className="p-5">
-                    <div className="text-sm font-semibold">{u.title}</div>
-                    <p className="mt-2 text-sm leading-6 text-muted-foreground">{u.body}</p>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Section>
-
-        <Section>
-          <div className="grid gap-8 lg:grid-cols-12 lg:items-start">
-            <div className="lg:col-span-6">
-              <h2 className="text-xl font-semibold tracking-tight">Not a note-taking app.</h2>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                Nexus Note isn’t a new place to write. It’s a local system that sits above what you already
-                use—connecting documents, time, tasks, and media into a calm, trustworthy intelligence hub.
-              </p>
-            </div>
-            <div className="lg:col-span-6">
-              <Card className="p-6">
-                <div className="text-xs font-medium text-muted-foreground">Design principle</div>
-                <div className="mt-2 text-sm font-semibold">Quiet power, explicit control.</div>
-                <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                  No hype loops. No black-box automation. Just grounded retrieval and deliberate actions.
+        {/* Definitions */}
+        <section className="border-y border-border/50 bg-surface/30 px-6 py-16 sm:py-20">
+          <div className="mx-auto max-w-2xl">
+            <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-10">Definitions</div>
+            <div className="grid gap-12 sm:grid-cols-2 sm:gap-16">
+              <div>
+                <div className="text-lg font-semibold text-accent">Nexus</div>
+                <p className="mt-2 text-muted-foreground leading-7">
+                  The central and most important point or place.
                 </p>
-              </Card>
+              </div>
+              <div>
+                <div className="text-lg font-semibold text-accent">Note</div>
+                <p className="mt-2 text-muted-foreground leading-7">
+                  Any piece of information worth remembering.
+                </p>
+              </div>
             </div>
           </div>
-        </Section>
+        </section>
 
-        <Section id="waitlist">
-          <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
-            <div className="lg:col-span-5">
-              <h2 className="text-2xl font-semibold tracking-tight">Join the waitlist</h2>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                Early access will prioritize users who care about privacy, local-first systems, and
-                reliable workflows.
-              </p>
-            </div>
-            <div className="lg:col-span-7">
-              <Card className="p-6">
-                <WaitlistForm source="home" />
-              </Card>
+        {/* What a note is */}
+        <section className="px-6 py-20 sm:py-28">
+          <div className="mx-auto max-w-2xl">
+            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+              A note is not a document.
+            </h2>
+            <p className="mt-4 text-muted-foreground leading-7">
+              In Nexus Note, a "note" is the atomic unit of meaning. It can be a document, a calendar event, a task, an email, a transcript, a remembered preference, or a pattern inferred from your behavior. Everything worth remembering becomes a note.
+            </p>
+            <p className="mt-4 text-muted-foreground leading-7">
+              Intelligence emerges from connection, not volume. The system links your notes across time and type—so when you ask a question, the answer draws from your meetings, your files, and your decisions, not just keyword matches.
+            </p>
+          </div>
+        </section>
+
+        {/* Not a note-taking app */}
+        <section className="border-y border-border/50 bg-surface/30 px-6 py-16 sm:py-20">
+          <div className="mx-auto max-w-2xl">
+            <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
+              Not a note-taking app.
+            </h2>
+            <p className="mt-4 text-muted-foreground leading-7">
+              Nexus Note is not a new place to write. It's not a cloud service. It's not a chatbot that only reacts to prompts.
+            </p>
+            <p className="mt-4 text-muted-foreground leading-7">
+              It's a local, private RAG system over your personal knowledge—an orchestration layer that connects documents, time, tasks, and media into a protected intelligence hub. The best AI is invisible until it matters.
+            </p>
+          </div>
+        </section>
+
+        {/* How it works */}
+        <section className="px-6 py-20 sm:py-28" id="how">
+          <div className="mx-auto max-w-2xl">
+            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+              How it works
+            </h2>
+            <div className="mt-10 space-y-8">
+              <div>
+                <h3 className="font-semibold">Ingest</h3>
+                <p className="mt-2 text-muted-foreground leading-7">
+                  Notes flow in from the sources you already use—docs, calendars, tasks, mail, audio, video, and more.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-semibold">Index locally</h3>
+                <p className="mt-2 text-muted-foreground leading-7">
+                  Embeddings and search indexes are built entirely on your Mac. Nothing leaves your machine.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-semibold">Retrieve and reason</h3>
+                <p className="mt-2 text-muted-foreground leading-7">
+                  A local model answers questions grounded in your notes—with citations, confidence cues, and traceable sources.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-semibold">Act with consent</h3>
+                <p className="mt-2 text-muted-foreground leading-7">
+                  Draft updates, schedule meetings, create tasks, plan sequences—always with explicit confirmation before anything changes.
+                </p>
+              </div>
             </div>
           </div>
-        </Section>
+        </section>
+
+        {/* Trust section */}
+        <section className="border-y border-border/50 bg-surface/30 px-6 py-20 sm:py-28">
+          <div className="mx-auto max-w-2xl">
+            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+              Trust by default
+            </h2>
+            <p className="mt-4 text-muted-foreground leading-7">
+              A local-first system should feel like infrastructure: predictable, inspectable, and calm. Your data is portable, under your control, and never a black box.
+            </p>
+            <ul className="mt-8 space-y-3 text-muted-foreground">
+              <li className="flex gap-3">
+                <span className="text-accent">—</span>
+                All models run locally or on infrastructure you control
+              </li>
+              <li className="flex gap-3">
+                <span className="text-accent">—</span>
+                All data stays on your machine unless you configure otherwise
+              </li>
+              <li className="flex gap-3">
+                <span className="text-accent">—</span>
+                Export, inspect, or delete anything at any time
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Who it's for */}
+        <section className="px-6 py-20 sm:py-28">
+          <div className="mx-auto max-w-2xl">
+            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+              Built for people who think for a living
+            </h2>
+            <p className="mt-4 text-muted-foreground leading-7">
+              Technical professionals, founders, CTOs, and researchers with large personal knowledge stores—files, notes, calendars, tasks—who understand AI but don't want their private data in the cloud.
+            </p>
+            <p className="mt-4 text-muted-foreground leading-7">
+              For users who want AI to <em>do things</em>, not just answer questions. Who value trust, control, and leverage over novelty.
+            </p>
+          </div>
+        </section>
+
+        {/* Waitlist */}
+        <section className="border-t border-border/50 bg-surface/30 px-6 py-20 sm:py-28" id="waitlist">
+          <div className="mx-auto max-w-md text-center">
+            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+              Join the waitlist
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Early access for those who care about privacy, ownership, and local-first systems.
+            </p>
+            <div className="mt-8">
+              <WaitlistForm source="home" />
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />
