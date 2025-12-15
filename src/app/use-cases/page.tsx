@@ -65,11 +65,129 @@ export default function UseCases() {
           </div>
         </section>
 
-        {/* Use Case 2: Meeting Synthesis */}
+        {/* Use Case 2: Writing & Drafting */}
         <section className="border-y border-border/50 bg-surface/30 px-6 py-20 sm:py-28">
           <div className="mx-auto max-w-6xl">
             <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
               <div className="order-2 lg:order-1 rounded-2xl border border-border/50 bg-background/50 p-6">
+                <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Draft request</div>
+                <p className="mt-2 text-sm font-medium">
+                  "Draft a follow-up email to the investor meeting, referencing our product roadmap discussion"
+                </p>
+                <div className="mt-4 text-xs font-medium text-muted-foreground uppercase tracking-wide">Sources used</div>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  <span className="inline-flex items-center rounded-full bg-accent/10 px-2.5 py-0.5 text-xs text-accent">Investor meeting transcript</span>
+                  <span className="inline-flex items-center rounded-full bg-accent/10 px-2.5 py-0.5 text-xs text-accent">Q2 roadmap doc</span>
+                  <span className="inline-flex items-center rounded-full bg-accent/10 px-2.5 py-0.5 text-xs text-accent">Product strategy notes</span>
+                </div>
+                <div className="mt-4 pt-4 border-t border-border/50">
+                  <p className="text-xs text-muted-foreground italic">Draft ready for review. 3 sources cited. Edit before sending.</p>
+                </div>
+              </div>
+              <div className="order-1 lg:order-2">
+                <div className="text-sm font-medium text-accent uppercase tracking-wide">Writing & Drafting</div>
+                <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
+                  Draft with context from your own notes
+                </h2>
+                <p className="mt-4 text-muted-foreground leading-7">
+                  Need to write a project update? A board memo? A response to a complex email thread? Nexus Note can draft it using context from your actual notes, meetings, and documents—not generic AI output.
+                </p>
+                <p className="mt-4 text-muted-foreground leading-7">
+                  "Draft a project update for the API migration, pulling from my notes and the last three engineering syncs." The draft arrives grounded in your actual work, ready for your edits.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Use Case 3: Operational Clarity */}
+        <section className="px-6 py-20 sm:py-28">
+          <div className="mx-auto max-w-6xl">
+            <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+              <div>
+                <div className="text-sm font-medium text-accent uppercase tracking-wide">Operational Clarity</div>
+                <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
+                  See your commitments clearly
+                </h2>
+                <p className="mt-4 text-muted-foreground leading-7">
+                  Tasks scattered across apps. Commitments buried in emails. Deadlines hidden in calendar notes. Nexus Note unifies them into a single view of what you owe, what's owed to you, and what's coming.
+                </p>
+                <p className="mt-4 text-muted-foreground leading-7">
+                  Ask "what did I commit to this week?" or "what am I waiting on from others?" and get an honest answer drawn from your calendar, tasks, and email threads.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="rounded-xl border border-border/50 bg-surface/30 p-4">
+                  <div className="text-sm font-medium">This week</div>
+                  <p className="mt-1 text-xs text-muted-foreground">12 tasks due, 4 meetings, 2 deadlines</p>
+                </div>
+                <div className="rounded-xl border border-border/50 bg-surface/30 p-4">
+                  <div className="text-sm font-medium">Overdue</div>
+                  <p className="mt-1 text-xs text-muted-foreground">3 tasks from last week need attention</p>
+                </div>
+                <div className="rounded-xl border border-border/50 bg-surface/30 p-4">
+                  <div className="text-sm font-medium">Waiting on</div>
+                  <p className="mt-1 text-xs text-muted-foreground">Responses from Alex, Jordan, finance team</p>
+                </div>
+                <div className="rounded-xl border border-border/50 bg-surface/30 p-4">
+                  <div className="text-sm font-medium">Upcoming</div>
+                  <p className="mt-1 text-xs text-muted-foreground">Board prep next week, Q2 planning in 2 weeks</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Use Case 4: Research Layer */}
+        <section className="border-y border-border/50 bg-surface/30 px-6 py-20 sm:py-28">
+          <div className="mx-auto max-w-6xl">
+            <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+              <div className="order-2 lg:order-1 space-y-3">
+                {[
+                  { query: 'Papers on transformer architectures', results: '47 documents' },
+                  { query: 'Notes from last 3 AI conferences', results: '12 documents' },
+                  { query: 'My highlights on product strategy', results: '23 documents' },
+                  { query: 'Articles about local-first software', results: '8 documents' },
+                ].map((item) => (
+                  <div key={item.query} className="rounded-xl border border-border/50 bg-background/50 p-4 flex justify-between items-center">
+                    <span className="text-sm">{item.query}</span>
+                    <span className="text-xs text-muted-foreground">{item.results}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="order-1 lg:order-2">
+                <div className="text-sm font-medium text-accent uppercase tracking-wide">Personal Research Layer</div>
+                <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
+                  Search across everything you've collected
+                </h2>
+                <p className="mt-4 text-muted-foreground leading-7">
+                  PDFs from conferences. Bookmarked articles. Notes from books. Research papers. Your own writing. All of it indexed, searchable, and queryable in natural language.
+                </p>
+                <p className="mt-4 text-muted-foreground leading-7">
+                  Ask "what have I read about retrieval-augmented generation?" and get a synthesized answer drawing from everything in your collection—not just keyword matches, but actual understanding of the content.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Use Case 5: Meeting Synthesis */}
+        <section className="px-6 py-20 sm:py-28">
+          <div className="mx-auto max-w-6xl">
+            <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+              <div>
+                <div className="text-sm font-medium text-accent uppercase tracking-wide">Meeting Synthesis</div>
+                <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
+                  Turn transcripts into durable notes
+                </h2>
+                <p className="mt-4 text-muted-foreground leading-7">
+                  Meetings generate hours of audio but minutes of actionable insight. Nexus Note transcribes recordings, extracts summaries, identifies action items, and links everything to the right projects.
+                </p>
+                <p className="mt-4 text-muted-foreground leading-7">
+                  Weeks later, when you ask "what did we agree to in that roadmap meeting?", the answer is instant—with a link to the original recording timestamp.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-border/50 bg-surface/30 p-6">
                 <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">From a 45-minute meeting</div>
                 <div className="mt-4 space-y-4">
                   <div>
@@ -88,126 +206,6 @@ export default function UseCases() {
                     <div className="text-sm font-medium">Decisions</div>
                     <p className="mt-1 text-sm text-muted-foreground">Postpone mobile app work until Q3. Hire one more backend engineer.</p>
                   </div>
-                </div>
-              </div>
-              <div className="order-1 lg:order-2">
-                <div className="text-sm font-medium text-accent uppercase tracking-wide">Meeting Synthesis</div>
-                <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
-                  Turn transcripts into durable notes
-                </h2>
-                <p className="mt-4 text-muted-foreground leading-7">
-                  Meetings generate hours of audio but minutes of actionable insight. Nexus Note transcribes recordings, extracts summaries, identifies action items, and links everything to the right projects.
-                </p>
-                <p className="mt-4 text-muted-foreground leading-7">
-                  Weeks later, when you ask "what did we agree to in that roadmap meeting?", the answer is instant—with a link to the original recording timestamp.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Use Case 3: Research Layer */}
-        <section className="px-6 py-20 sm:py-28">
-          <div className="mx-auto max-w-6xl">
-            <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-              <div>
-                <div className="text-sm font-medium text-accent uppercase tracking-wide">Personal Research Layer</div>
-                <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
-                  Search across everything you've collected
-                </h2>
-                <p className="mt-4 text-muted-foreground leading-7">
-                  PDFs from conferences. Bookmarked articles. Notes from books. Research papers. Your own writing. All of it indexed, searchable, and queryable in natural language.
-                </p>
-                <p className="mt-4 text-muted-foreground leading-7">
-                  Ask "what have I read about retrieval-augmented generation?" and get a synthesized answer drawing from everything in your collection—not just keyword matches, but actual understanding of the content.
-                </p>
-              </div>
-              <div className="space-y-3">
-                {[
-                  { query: 'Papers on transformer architectures', results: '47 documents' },
-                  { query: 'Notes from last 3 AI conferences', results: '12 documents' },
-                  { query: 'My highlights on product strategy', results: '23 documents' },
-                  { query: 'Articles about local-first software', results: '8 documents' },
-                ].map((item) => (
-                  <div key={item.query} className="rounded-xl border border-border/50 bg-surface/30 p-4 flex justify-between items-center">
-                    <span className="text-sm">{item.query}</span>
-                    <span className="text-xs text-muted-foreground">{item.results}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Use Case 4: Operational Clarity */}
-        <section className="border-y border-border/50 bg-surface/30 px-6 py-20 sm:py-28">
-          <div className="mx-auto max-w-6xl">
-            <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-              <div className="order-2 lg:order-1">
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="rounded-xl border border-border/50 bg-background/50 p-4">
-                    <div className="text-sm font-medium">This week</div>
-                    <p className="mt-1 text-xs text-muted-foreground">12 tasks due, 4 meetings, 2 deadlines</p>
-                  </div>
-                  <div className="rounded-xl border border-border/50 bg-background/50 p-4">
-                    <div className="text-sm font-medium">Overdue</div>
-                    <p className="mt-1 text-xs text-muted-foreground">3 tasks from last week need attention</p>
-                  </div>
-                  <div className="rounded-xl border border-border/50 bg-background/50 p-4">
-                    <div className="text-sm font-medium">Waiting on</div>
-                    <p className="mt-1 text-xs text-muted-foreground">Responses from Alex, Jordan, finance team</p>
-                  </div>
-                  <div className="rounded-xl border border-border/50 bg-background/50 p-4">
-                    <div className="text-sm font-medium">Upcoming</div>
-                    <p className="mt-1 text-xs text-muted-foreground">Board prep next week, Q2 planning in 2 weeks</p>
-                  </div>
-                </div>
-              </div>
-              <div className="order-1 lg:order-2">
-                <div className="text-sm font-medium text-accent uppercase tracking-wide">Operational Clarity</div>
-                <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
-                  See your commitments clearly
-                </h2>
-                <p className="mt-4 text-muted-foreground leading-7">
-                  Tasks scattered across apps. Commitments buried in emails. Deadlines hidden in calendar notes. Nexus Note unifies them into a single view of what you owe, what's owed to you, and what's coming.
-                </p>
-                <p className="mt-4 text-muted-foreground leading-7">
-                  Ask "what did I commit to this week?" or "what am I waiting on from others?" and get an honest answer drawn from your calendar, tasks, and email threads.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Use Case 5: Writing & Drafting */}
-        <section className="px-6 py-20 sm:py-28">
-          <div className="mx-auto max-w-6xl">
-            <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-              <div>
-                <div className="text-sm font-medium text-accent uppercase tracking-wide">Writing & Drafting</div>
-                <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
-                  Draft with context from your own notes
-                </h2>
-                <p className="mt-4 text-muted-foreground leading-7">
-                  Need to write a project update? A board memo? A response to a complex email thread? Nexus Note can draft it using context from your actual notes, meetings, and documents—not generic AI output.
-                </p>
-                <p className="mt-4 text-muted-foreground leading-7">
-                  "Draft a project update for the API migration, pulling from my notes and the last three engineering syncs." The draft arrives grounded in your actual work, ready for your edits.
-                </p>
-              </div>
-              <div className="rounded-2xl border border-border/50 bg-surface/30 p-6">
-                <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Draft request</div>
-                <p className="mt-2 text-sm font-medium">
-                  "Draft a follow-up email to the investor meeting, referencing our product roadmap discussion"
-                </p>
-                <div className="mt-4 text-xs font-medium text-muted-foreground uppercase tracking-wide">Sources used</div>
-                <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="inline-flex items-center rounded-full bg-accent/10 px-2.5 py-0.5 text-xs text-accent">Investor meeting transcript</span>
-                  <span className="inline-flex items-center rounded-full bg-accent/10 px-2.5 py-0.5 text-xs text-accent">Q2 roadmap doc</span>
-                  <span className="inline-flex items-center rounded-full bg-accent/10 px-2.5 py-0.5 text-xs text-accent">Product strategy notes</span>
-                </div>
-                <div className="mt-4 pt-4 border-t border-border/50">
-                  <p className="text-xs text-muted-foreground italic">Draft ready for review. 3 sources cited. Edit before sending.</p>
                 </div>
               </div>
             </div>

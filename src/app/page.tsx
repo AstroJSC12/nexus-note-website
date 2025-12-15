@@ -86,13 +86,13 @@ export default function Home() {
                 <div className="mt-6 pt-4 border-t border-accent/20">
                   <div className="text-[10px] font-medium text-muted-foreground uppercase tracking-widest mb-2">Sources</div>
                   <div className="flex flex-wrap gap-1.5">
-                    <span className="inline-flex items-center rounded-md bg-background/80 px-2 py-0.5 text-xs text-muted-foreground border border-border/50">
+                    <span className="inline-flex items-center rounded-full bg-accent/10 px-2.5 py-0.5 text-xs text-accent">
                       Mar 12 meeting
                     </span>
-                    <span className="inline-flex items-center rounded-md bg-background/80 px-2 py-0.5 text-xs text-muted-foreground border border-border/50">
+                    <span className="inline-flex items-center rounded-full bg-accent/10 px-2.5 py-0.5 text-xs text-accent">
                       Calendar note
                     </span>
-                    <span className="inline-flex items-center rounded-md bg-background/80 px-2 py-0.5 text-xs text-muted-foreground border border-border/50">
+                    <span className="inline-flex items-center rounded-full bg-accent/10 px-2.5 py-0.5 text-xs text-accent">
                       Follow-up email
                     </span>
                   </div>
