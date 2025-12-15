@@ -1,6 +1,16 @@
+import type { Metadata } from 'next';
 import { Header } from '@/components/site/header';
 import { Footer } from '@/components/site/footer';
 import { ButtonLink } from '@/components/site/button';
+
+export const metadata: Metadata = {
+  title: 'How It Works - Nexus Note',
+  description: 'Learn how Nexus Note ingests, indexes, reasons, and acts on your personal knowledge—entirely on your Mac with local AI.',
+  openGraph: {
+    title: 'How It Works - Nexus Note',
+    description: 'Learn how Nexus Note ingests, indexes, reasons, and acts on your personal knowledge—entirely on your Mac with local AI.',
+  },
+};
 
 export default function HowItWorks() {
   return (

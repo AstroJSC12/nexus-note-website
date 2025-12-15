@@ -1,6 +1,16 @@
+import type { Metadata } from 'next';
 import { Header } from '@/components/site/header';
 import { Footer } from '@/components/site/footer';
 import { ButtonLink } from '@/components/site/button';
+
+export const metadata: Metadata = {
+  title: 'Use Cases - Nexus Note',
+  description: 'See how founders, CTOs, researchers, and power users leverage Nexus Note for decision memory, meeting synthesis, research, and more.',
+  openGraph: {
+    title: 'Use Cases - Nexus Note',
+    description: 'See how founders, CTOs, researchers, and power users leverage Nexus Note for decision memory, meeting synthesis, research, and more.',
+  },
+};
 
 export default function UseCases() {
   return (

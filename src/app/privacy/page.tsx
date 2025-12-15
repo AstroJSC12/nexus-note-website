@@ -1,5 +1,15 @@
+import type { Metadata } from 'next';
 import { Header } from '@/components/site/header';
 import { Footer } from '@/components/site/footer';
+
+export const metadata: Metadata = {
+  title: 'Privacy - Nexus Note',
+  description: 'Your data stays on your machine. Learn about Nexus Note\'s local-first privacy architecture and data principles.',
+  openGraph: {
+    title: 'Privacy - Nexus Note',
+    description: 'Your data stays on your machine. Learn about Nexus Note\'s local-first privacy architecture and data principles.',
+  },
+};
 
 export default function Privacy() {
   return (

@@ -1,5 +1,15 @@
+import type { Metadata } from 'next';
 import { Header } from '@/components/site/header';
 import { Footer } from '@/components/site/footer';
+
+export const metadata: Metadata = {
+  title: 'Terms of Service - Nexus Note',
+  description: 'Terms of Service for Nexus Note—license, data ownership, acceptable use, and legal terms.',
+  openGraph: {
+    title: 'Terms of Service - Nexus Note',
+    description: 'Terms of Service for Nexus Note—license, data ownership, acceptable use, and legal terms.',
+  },
+};
 
 export default function Terms() {
   return (

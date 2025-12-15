@@ -1,6 +1,16 @@
+import type { Metadata } from 'next';
 import { Header } from '@/components/site/header';
 import { Footer } from '@/components/site/footer';
 import { ButtonLink } from '@/components/site/button';
+
+export const metadata: Metadata = {
+  title: 'FAQ - Nexus Note',
+  description: 'Frequently asked questions about Nexus Note—privacy, security, technical details, pricing, and philosophy.',
+  openGraph: {
+    title: 'FAQ - Nexus Note',
+    description: 'Frequently asked questions about Nexus Note—privacy, security, technical details, pricing, and philosophy.',
+  },
+};
 
 function FAQ({ question, children }: { question: string; children: React.ReactNode }) {
   return (
