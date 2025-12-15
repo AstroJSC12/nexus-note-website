@@ -41,13 +41,20 @@ export function WaitlistForm({
         body: JSON.stringify({ email: trimmed, source }),
       });
 
-      const data = (await res.json()) as { ok: boolean; error?: string };
+      const text = await res.text();
+      let data: { ok: boolean; error?: string; message?: string };
+      try {
+        data = JSON.parse(text);
+      } catch {
+        throw new Error('Server error. Please try again.');
+      }
+
       if (!res.ok || !data.ok) {
         throw new Error(data.error || 'Something went wrong.');
       }
 
       setStatus('success');
-      setMessage('You’re on the list. We’ll reach out when Nexus Note is ready.');
+      setMessage(data.message || "You're on the list. We'll reach out when Nexus Note is ready.");
     } catch (err) {
       setStatus('error');
       setMessage(err instanceof Error ? err.message : 'Something went wrong.');
