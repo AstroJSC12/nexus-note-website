@@ -63,88 +63,105 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Example interaction - centered */}
+        {/* Example interaction - split layout */}
         <section className="px-6 pb-20 sm:pb-28">
-          <div className="mx-auto max-w-xl">
-            <div className="rounded-2xl border border-border/50 bg-surface/30 p-6">
-              <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">You ask</div>
-              <p className="mt-2 font-medium">
-                "What did I decide about the hiring plan last month?"
-              </p>
-              <div className="mt-6 text-xs font-medium text-muted-foreground uppercase tracking-wide">Nexus Note answers</div>
-              <p className="mt-2 text-muted-foreground leading-7">
-                You decided to delay Q1 hiring by 6 weeks and revisit after the product launch.
-              </p>
-              <div className="mt-4">
-                <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Sources</div>
-                <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="inline-flex items-center rounded-full bg-accent/10 px-3 py-1 text-sm text-accent">
-                    Mar 12 meeting
-                  </span>
-                  <span className="inline-flex items-center rounded-full bg-accent/10 px-3 py-1 text-sm text-accent">
-                    Calendar note
-                  </span>
-                  <span className="inline-flex items-center rounded-full bg-accent/10 px-3 py-1 text-sm text-accent">
-                    Follow-up email
-                  </span>
+          <div className="mx-auto max-w-4xl">
+            <div className="grid gap-6 lg:grid-cols-2">
+              {/* Question */}
+              <FadeIn>
+              <div className="rounded-2xl border border-border/50 bg-surface/30 p-6">
+                <div className="text-xs font-medium text-accent uppercase tracking-wide">You ask</div>
+                <p className="mt-4 text-xl font-medium leading-snug">
+                  "What did I decide about the hiring plan last month?"
+                </p>
+              </div>
+              </FadeIn>
+              {/* Answer */}
+              <FadeIn delay={150}>
+              <div className="rounded-2xl border border-accent/30 bg-accent/5 p-6">
+                <div className="text-xs font-medium text-accent uppercase tracking-wide">Nexus Note</div>
+                <p className="mt-4 text-foreground leading-7">
+                  You decided to delay Q1 hiring by 6 weeks and revisit after the product launch.
+                </p>
+                <div className="mt-6 pt-4 border-t border-accent/20">
+                  <div className="text-[10px] font-medium text-muted-foreground uppercase tracking-widest mb-2">Sources</div>
+                  <div className="flex flex-wrap gap-1.5">
+                    <span className="inline-flex items-center rounded-md bg-background/80 px-2 py-0.5 text-xs text-muted-foreground border border-border/50">
+                      Mar 12 meeting
+                    </span>
+                    <span className="inline-flex items-center rounded-md bg-background/80 px-2 py-0.5 text-xs text-muted-foreground border border-border/50">
+                      Calendar note
+                    </span>
+                    <span className="inline-flex items-center rounded-md bg-background/80 px-2 py-0.5 text-xs text-muted-foreground border border-border/50">
+                      Follow-up email
+                    </span>
+                  </div>
                 </div>
               </div>
+              </FadeIn>
             </div>
           </div>
         </section>
 
-        {/* Definitions - wide 2 column */}
-        <section className="border-y border-border/50 bg-surface/30 px-6 py-16 sm:py-20">
-          <div className="mx-auto max-w-5xl">
-            <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-10 text-center">Definitions</div>
-            <div className="grid gap-12 sm:grid-cols-2 sm:gap-20">
-              <div className="text-center sm:text-right">
-                <div className="text-2xl font-semibold text-accent">Nexus</div>
-                <p className="mt-3 text-muted-foreground leading-7">
+        {/* Definitions - asymmetric layout */}
+        <section className="border-y border-border/50 bg-surface/30 px-6 py-20 sm:py-28">
+          <div className="mx-auto max-w-6xl">
+            <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
+              <FadeIn>
+              <div>
+                <div className="text-4xl sm:text-5xl font-semibold text-accent">Nexus</div>
+                <p className="mt-4 text-lg text-muted-foreground leading-8">
                   The central and most important point or place.
                 </p>
               </div>
-              <div className="text-center sm:text-left">
-                <div className="text-2xl font-semibold text-accent">Note</div>
-                <p className="mt-3 text-muted-foreground leading-7">
+              </FadeIn>
+              <FadeIn delay={200}>
+              <div className="lg:pt-12">
+                <div className="text-4xl sm:text-5xl font-semibold text-accent">Note</div>
+                <p className="mt-4 text-lg text-muted-foreground leading-8">
                   Any piece of information worth remembering.
                 </p>
               </div>
+              </FadeIn>
             </div>
           </div>
         </section>
 
-        {/* What a note is - full width header + 4 column grid */}
+        {/* What a note is - left/right layout */}
         <section className="px-6 py-20 sm:py-28">
           <div className="mx-auto max-w-6xl">
-            <div className="max-w-2xl">
-              <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-                A note is not a document.
-              </h2>
-              <p className="mt-4 text-muted-foreground leading-7">
-                In Nexus Note, a "note" is the atomic unit of meaning. Everything worth remembering becomes a note.
-              </p>
-            </div>
-            <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                { type: 'Documents', desc: 'Files, PDFs, and written notes' },
-                { type: 'Events', desc: 'Calendar entries and meetings' },
-                { type: 'Tasks', desc: 'To-dos and commitments' },
-                { type: 'Email', desc: 'Messages and threads' },
-                { type: 'Transcripts', desc: 'Audio and video recordings' },
-                { type: 'Preferences', desc: 'Remembered choices and settings' },
-                { type: 'Patterns', desc: 'Inferred behaviors and routines' },
-                { type: 'Signals', desc: 'Things you want to remember later' },
-              ].map((item) => (
-                <div key={item.type} className="rounded-xl border border-border/50 bg-surface/20 p-4">
-                  <div className="text-sm font-medium">{item.type}</div>
-                  <p className="mt-1 text-xs text-muted-foreground">{item.desc}</p>
+            <div className="grid gap-12 lg:grid-cols-12 lg:items-start">
+              <div className="lg:col-span-5 lg:sticky lg:top-24">
+                <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+                  A note is not a document.
+                </h2>
+                <p className="mt-4 text-muted-foreground leading-7">
+                  In Nexus Note, a "note" is the atomic unit of meaning. Everything worth remembering becomes a note.
+                </p>
+                <p className="mt-6 text-muted-foreground leading-7">
+                  Intelligence emerges from connection, not volume. The system links your notes across time and type.
+                </p>
+              </div>
+              <div className="lg:col-span-7">
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {[
+                    { type: 'Documents', desc: 'Files, PDFs, and written notes' },
+                    { type: 'Events', desc: 'Calendar entries and meetings' },
+                    { type: 'Tasks', desc: 'To-dos and commitments' },
+                    { type: 'Email', desc: 'Messages and threads' },
+                    { type: 'Transcripts', desc: 'Audio and video recordings' },
+                    { type: 'Preferences', desc: 'Remembered choices and settings' },
+                    { type: 'Patterns', desc: 'Inferred behaviors and routines' },
+                    { type: 'Signals', desc: 'Things you want to remember later' },
+                  ].map((item) => (
+                    <div key={item.type} className="rounded-xl border border-border/50 bg-surface/20 p-4 hover:bg-surface/40 transition-colors">
+                      <div className="text-sm font-medium">{item.type}</div>
+                      <p className="mt-1 text-xs text-muted-foreground">{item.desc}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
-            <p className="mt-10 max-w-2xl text-muted-foreground leading-7">
-              Intelligence emerges from connection, not volume. The system links your notes across time and type—so when you ask a question, the answer draws from your meetings, your files, and your decisions.
-            </p>
           </div>
         </section>
 
@@ -202,34 +219,53 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Trust section - 3 column grid */}
+        {/* Trust section - left/right alternating */}
         <section className="border-y border-border/50 bg-surface/30 px-6 py-20 sm:py-28">
           <div className="mx-auto max-w-6xl">
-            <div className="text-center max-w-2xl mx-auto">
-              <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-                Trust by default
-              </h2>
-              <p className="mt-4 text-muted-foreground leading-7">
-                A local-first system should feel like infrastructure: predictable, inspectable, and calm.
-              </p>
-            </div>
-            <div className="mt-12 grid gap-6 sm:grid-cols-3">
-              <div className="rounded-2xl border border-border/50 bg-background/50 p-6 text-center">
-                <div className="text-sm font-semibold">Local Models</div>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  All models run on your Mac or infrastructure you control.
-                </p>
+            <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+              <div className="order-2 lg:order-1">
+                <div className="space-y-6">
+                  <div className="flex gap-4 items-start">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
+                      <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="font-semibold">Local Models</div>
+                      <p className="mt-1 text-sm text-muted-foreground">All models run on your Mac or infrastructure you control.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 items-start">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
+                      <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="font-semibold">Your Data</div>
+                      <p className="mt-1 text-sm text-muted-foreground">Everything stays on your machine unless you configure otherwise.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 items-start">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
+                      <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="font-semibold">Full Control</div>
+                      <p className="mt-1 text-sm text-muted-foreground">Export, inspect, or delete anything at any time.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="rounded-2xl border border-border/50 bg-background/50 p-6 text-center">
-                <div className="text-sm font-semibold">Your Data</div>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Everything stays on your machine unless you configure otherwise.
-                </p>
-              </div>
-              <div className="rounded-2xl border border-border/50 bg-background/50 p-6 text-center">
-                <div className="text-sm font-semibold">Full Control</div>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Export, inspect, or delete anything at any time.
+              <div className="order-1 lg:order-2">
+                <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+                  Trust by default
+                </h2>
+                <p className="mt-4 text-muted-foreground leading-7">
+                  A local-first system should feel like infrastructure: predictable, inspectable, and calm. Your data is portable, under your control, and never a black box.
                 </p>
               </div>
             </div>
