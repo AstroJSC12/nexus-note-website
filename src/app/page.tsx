@@ -16,7 +16,7 @@ export default function Home() {
               A private intelligence layer over your digital life.
             </h1>
             <p className="mt-6 text-base leading-7 text-muted-foreground max-w-2xl mx-auto">
-              Nexus Note is a Mac-native system that turns everything worth remembering into a unified, searchable memory—documents, tasks, calendars, email, meetings, and the patterns you'd want to keep. It indexes locally, reasons locally, and only acts with explicit boundaries.
+              Nexus Note is a Mac-native system that turns everything worth remembering into a unified, searchable memory – documents, tasks, calendars, email, meetings, and the patterns you'd want to keep. It indexes locally, reasons locally, and only acts with explicit boundaries.
             </p>
             <div className="mt-10 flex justify-center gap-4">
               <ButtonLink href="#waitlist">Request early access</ButtonLink>
