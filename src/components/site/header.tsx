@@ -9,10 +9,10 @@ export function Header() {
       <Container className="flex h-14 items-center justify-between">
         <Logo />
         <nav className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
-          <Link href="/#how" className="hover:text-foreground transition-colors">
+          <Link href="/how-it-works" className="hover:text-foreground transition-colors">
             How it works
           </Link>
-          <Link href="/#use-cases" className="hover:text-foreground transition-colors">
+          <Link href="/use-cases" className="hover:text-foreground transition-colors">
             Use cases
           </Link>
           <Link href="/privacy" className="hover:text-foreground transition-colors">
