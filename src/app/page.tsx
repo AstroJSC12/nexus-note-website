@@ -2,6 +2,7 @@ import { Header } from '@/components/site/header';
 import { Footer } from '@/components/site/footer';
 import { ButtonLink } from '@/components/site/button';
 import { WaitlistForm } from '@/components/site/waitlist-form';
+import { FadeIn } from '@/components/site/fade-in';
 
 export default function Home() {
   return (
@@ -12,15 +13,21 @@ export default function Home() {
         {/* Hero */}
         <section className="px-6 pt-20 pb-16 sm:pt-32 sm:pb-24">
           <div className="mx-auto max-w-4xl text-center">
-            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
-              A private intelligence layer over your digital life.
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto">
-              Mac-native. Local-first. Entirely yours.
-            </p>
-            <div className="mt-10 flex justify-center gap-4">
-              <ButtonLink href="#waitlist">Request early access</ButtonLink>
-            </div>
+            <FadeIn>
+              <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
+                A private intelligence layer over your digital life.
+              </h1>
+            </FadeIn>
+            <FadeIn delay={150}>
+              <p className="mt-6 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto">
+                Mac-native. Local-first. Entirely yours.
+              </p>
+            </FadeIn>
+            <FadeIn delay={300}>
+              <div className="mt-10 flex justify-center gap-4">
+                <ButtonLink href="#waitlist">Request early access</ButtonLink>
+              </div>
+            </FadeIn>
           </div>
         </section>
 
@@ -28,24 +35,30 @@ export default function Home() {
         <section className="px-6 pb-20 sm:pb-28">
           <div className="mx-auto max-w-6xl">
             <div className="grid gap-6 sm:grid-cols-3">
+              <FadeIn delay={0}>
               <div className="rounded-2xl border border-border/50 bg-surface/30 p-6">
                 <div className="text-sm font-medium text-accent">Unified Memory</div>
                 <p className="mt-3 text-sm text-muted-foreground leading-6">
                   Documents, calendars, email, meetings, tasks, and patterns—all searchable in one place.
                 </p>
               </div>
+              </FadeIn>
+              <FadeIn delay={100}>
               <div className="rounded-2xl border border-border/50 bg-surface/30 p-6">
                 <div className="text-sm font-medium text-accent">Local Intelligence</div>
                 <p className="mt-3 text-sm text-muted-foreground leading-6">
                   Indexes and reasons entirely on your Mac. Nothing leaves your machine.
                 </p>
               </div>
+              </FadeIn>
+              <FadeIn delay={200}>
               <div className="rounded-2xl border border-border/50 bg-surface/30 p-6">
                 <div className="text-sm font-medium text-accent">Explicit Boundaries</div>
                 <p className="mt-3 text-sm text-muted-foreground leading-6">
                   Acts only with your consent. Every action requires confirmation.
                 </p>
               </div>
+              </FadeIn>
             </div>
           </div>
         </section>
