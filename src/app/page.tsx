@@ -11,10 +11,10 @@ export default function Home() {
 
       <main>
         {/* Hero */}
-        <section className="px-6 pt-20 pb-16 sm:pt-32 sm:pb-24">
+        <section className="px-4 sm:px-6 pt-16 pb-12 sm:pt-32 sm:pb-24">
           <div className="mx-auto max-w-4xl text-center">
             <FadeIn>
-              <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
+              <h1 className="text-3xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
                 A private intelligence layer over your digital life.
               </h1>
             </FadeIn>
@@ -32,9 +32,9 @@ export default function Home() {
         </section>
 
         {/* What it does - 3 column grid */}
-        <section className="px-6 pb-20 sm:pb-28">
+        <section className="px-4 sm:px-6 pb-16 sm:pb-28">
           <div className="mx-auto max-w-6xl">
-            <div className="grid gap-6 sm:grid-cols-3">
+            <div className="grid gap-4 sm:gap-6 sm:grid-cols-3">
               <FadeIn delay={0}>
               <div className="rounded-2xl border border-border/50 bg-surface/30 p-6">
                 <div className="text-sm font-medium text-accent">Unified Memory</div>
@@ -64,9 +64,9 @@ export default function Home() {
         </section>
 
         {/* Example interaction - split layout */}
-        <section className="px-6 pb-20 sm:pb-28">
+        <section className="px-4 sm:px-6 pb-16 sm:pb-28">
           <div className="mx-auto max-w-4xl">
-            <div className="grid gap-6 lg:grid-cols-2">
+            <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
               {/* Question */}
               <FadeIn>
               <div className="rounded-2xl border border-border/50 bg-surface/30 p-6">
@@ -104,9 +104,9 @@ export default function Home() {
         </section>
 
         {/* Definitions - asymmetric layout */}
-        <section className="border-y border-border/50 bg-surface/30 px-6 py-20 sm:py-28">
+        <section className="border-y border-border/50 bg-surface/30 px-4 sm:px-6 py-16 sm:py-28">
           <div className="mx-auto max-w-6xl">
-            <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
+            <div className="grid gap-10 sm:gap-16 sm:grid-cols-2 lg:gap-24">
               <FadeIn>
               <div>
                 <div className="text-4xl sm:text-5xl font-semibold text-accent">Nexus</div>
@@ -116,7 +116,7 @@ export default function Home() {
               </div>
               </FadeIn>
               <FadeIn delay={200}>
-              <div className="lg:pt-12">
+              <div className="sm:pt-8 lg:pt-12">
                 <div className="text-4xl sm:text-5xl font-semibold text-accent">Note</div>
                 <p className="mt-4 text-lg text-muted-foreground leading-8">
                   Any piece of information worth remembering.
@@ -128,9 +128,9 @@ export default function Home() {
         </section>
 
         {/* What a note is - left/right layout */}
-        <section className="px-6 py-20 sm:py-28">
+        <section className="px-4 sm:px-6 py-16 sm:py-28">
           <div className="mx-auto max-w-6xl">
-            <div className="grid gap-12 lg:grid-cols-12 lg:items-start">
+            <div className="grid gap-8 sm:gap-12 lg:grid-cols-12 lg:items-start">
               <div className="lg:col-span-5 lg:sticky lg:top-24">
                 <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
                   A note is not a document.
@@ -166,7 +166,7 @@ export default function Home() {
         </section>
 
         {/* Not a note-taking app - centered statement */}
-        <section className="border-y border-border/50 bg-surface/30 px-6 py-16 sm:py-24">
+        <section className="border-y border-border/50 bg-surface/30 px-4 sm:px-6 py-12 sm:py-24">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
               Not a note-taking app.
@@ -181,12 +181,12 @@ export default function Home() {
         </section>
 
         {/* How it works - 4 column grid */}
-        <section className="px-6 py-20 sm:py-28" id="how">
+        <section className="px-4 sm:px-6 py-16 sm:py-28" id="how">
           <div className="mx-auto max-w-6xl">
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl text-center">
               How it works
             </h2>
-            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-8 sm:mt-12 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
               <div className="text-center">
                 <div className="text-4xl font-light text-accent/60">1</div>
                 <h3 className="mt-3 font-semibold">Ingest</h3>
@@ -220,9 +220,9 @@ export default function Home() {
         </section>
 
         {/* Trust section - left/right alternating */}
-        <section className="border-y border-border/50 bg-surface/30 px-6 py-20 sm:py-28">
+        <section className="border-y border-border/50 bg-surface/30 px-4 sm:px-6 py-16 sm:py-28">
           <div className="mx-auto max-w-6xl">
-            <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div className="grid gap-8 sm:gap-12 lg:grid-cols-2 lg:items-center">
               <div className="order-2 lg:order-1">
                 <div className="space-y-6">
                   <div className="flex gap-4 items-start">
@@ -273,9 +273,9 @@ export default function Home() {
         </section>
 
         {/* Who it's for - left-aligned with accent */}
-        <section className="px-6 py-20 sm:py-28">
+        <section className="px-4 sm:px-6 py-16 sm:py-28">
           <div className="mx-auto max-w-6xl">
-            <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div className="grid gap-8 sm:gap-12 lg:grid-cols-2 lg:items-center">
               <div>
                 <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
                   Built for people who think for a living
@@ -306,7 +306,7 @@ export default function Home() {
         </section>
 
         {/* Waitlist - centered */}
-        <section className="border-t border-border/50 bg-surface/30 px-6 py-20 sm:py-28" id="waitlist">
+        <section className="border-t border-border/50 bg-surface/30 px-4 sm:px-6 py-16 sm:py-28" id="waitlist">
           <div className="mx-auto max-w-md text-center">
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
               Join the waitlist

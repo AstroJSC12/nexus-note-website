@@ -59,12 +59,15 @@ export function WaitlistForm({
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
         <div className="flex-1">
           <Input
-            type="email"
+            type="text"
             inputMode="email"
             autoComplete="email"
+            autoCapitalize="none"
+            autoCorrect="off"
+            spellCheck={false}
             placeholder="you@company.com"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value.toLowerCase())}
             aria-label="Email address"
             disabled={status === 'loading' || status === 'success'}
           />
